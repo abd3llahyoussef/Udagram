@@ -32,13 +32,11 @@ jobs:
             npm run build
             printenv > www/.env
       - aws-cli/install
-       - run:
-          name: Installing deployment dependencies
-          working_directory: /
-          command: |
-            sudo apt-get -y -qq update
-            sudo apt-get install python3-pip python3-dev build-essential
-            sudo pip3 install awsebcli
+      dependencies:
+  pre:
+    - sudo apt-get update
+    - sudo apt-get install python-dev
+    - sudo pip install awsebcli
       - run:
           name: Deploy Server
           command: |-
