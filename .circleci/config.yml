@@ -17,7 +17,7 @@ jobs:
       - aws-cli/install
       - run:
           name: Deploy Frontend
-          command: aws s3 cp --recursive --acl public-read ./www $S3_BUCKET_FRONTEND
+          command: aws s3 cp --recursive --acl public-read ./www s3://udagram-api/
   server:
     working_directory: ~/app/udagram-api
     executor: node/default
@@ -31,7 +31,6 @@ jobs:
           command: |-
             npm run build
             printenv > www/.env
-            npm run archive
       - aws-cli/install
       - run:
           name: Deploy Server
