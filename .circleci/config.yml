@@ -35,9 +35,12 @@ jobs:
       - run:
           name: Deploy Server
           command: |-
-            aws s3 cp ./www/Archive.zip $S3_udagram-api
-            aws elasticbeanstalk create-application-version --application-name $EB_APP --version-label <<pipeline.git.revision>> --source-bundle S3Bucket="$EB_BUCKET",S3Key="Archive.zip"
-            aws elasticbeanstalk update-environment --application-name $EB_APP --environment-name $EB_ENV --version-label <<pipeline.git.revision>>
+            aws s3 mv ./www/Archive.zip s3://elasticbeanstalk-udagram-api/app/app-dev-$TIMESTAMP.zip
+            aws elasticbeanstalk create-application-version --region us-east-1 \
+  --application-name udagram-api --version-label development-$TIMESTAMP \
+  --source-bundle S3Bucket=elasticbeanstalk-udagram-api,S3Key=app/app-dev-$TIMESTAMP.zip
+            aws elasticbeanstalk update-environment --region us-east-1 --environment-name udagram-api-dev \
+  --version-label development-$TIMESTAMP
 
 workflows:
   build_and_deploy:
