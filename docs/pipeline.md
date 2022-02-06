@@ -12,4 +12,4 @@ CircleCI reads the `.circleci/config.yml` file which tells the service what has 
 there are 2 jobs (frontend & server) to be run by CircleCI.
 - **Frontend**: Runs the `build` script given in the `package.json` file. Then uses AWS CLI to upload assets to S3.
 - **Server**: Runs the `build` script, exports all environment variables from CircleCI configuration to a `.env` file,
-  then runs the `archive` script. Then uses AWS CLI to upload archive to S3.
+  then runs the `archive` script. Then uses AWS CLI to upload archive to S3 bucket used for uploading the server only.
