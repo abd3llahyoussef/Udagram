@@ -5,9 +5,9 @@ This application is provided to you as an alternative starter project if you do 
 ## Getting Started
 
 1. Clone this repo locally into the location of your choice.
-1. Move the content of the udagram folder at the root of the repository as this will become the main content of the project.
-1. Open a terminal and navigate to the root of the repo
-1. follow the instructions in the installation step
+2. Move the content of the udagram folder at the root of the repository as this will become the main content of the project.
+3. Open a terminal and navigate to the root of the repo
+4. follow the instructions in the installation step
 
 The project can run but is missing some information to connect to the database and storage service. These will be setup during the course of the project
 
@@ -19,10 +19,11 @@ A list of project dependencies can be found [here](docs/dependencies.md).
 Provision the necessary AWS services needed for running the application:
 
 1. In AWS, provision a publicly available RDS database running Postgres.
-1. In AWS, provision a s3 bucket for hosting the uploaded files.
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv).
-1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
-1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
+2. In AWS, provision a s3 bucket for hosting the uploaded files.
+3. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv).
+4. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. 
+5. After installation is done start the api in dev mode with `npm run dev`.
+6. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
 
 ### app Badge 
 [![CircleCI](https://circleci.com/gh/abd3llahyoussef/Udagram.svg?style=svg)](https://app.circleci.com/pipelines/github/abd3llahyoussef/Udagram/16/workflows/d0bbc56b-5c2b-4eec-803b-38c657bae654)
