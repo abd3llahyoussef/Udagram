@@ -1,3 +1,4 @@
+eb init
 eb setenv AWS_ACCESS_KEY_ID=AKIA4Q7H3AITWV7X7HD6
 eb setenv AWS_BUCKET=udagram-api
 eb setenv AWS_PROFILE=default
